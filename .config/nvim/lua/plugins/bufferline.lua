@@ -1,29 +1,9 @@
 return {
-    {
-        "akinsho/bufferline.nvim",
-        version = "*",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        config = function()
-            vim.opt.termguicolors = true
-            require("bufferline").setup({
-                options = {
-                    offsets = {
-                        {
-                            filetype = "NvimTree",
-                            text = "NvimTree",
-                            separator = true,
-                        },
-                    },
-                },
-            })
-            vim.keymap.set("n", "<leader>[", ":bprevious<CR>")
-            vim.keymap.set("n", "<leader>]", ":bnext<CR>")
-        end,
-    },
-    {
-        "famiu/bufdelete.nvim",
-        config = function()
-            vim.keymap.set("n", "<leader>bd", ":Bdelete<CR>", { silent = true })
-        end,
-    },
+  "akinsho/bufferline.nvim",
+  keys = {
+    { "<leader>bh", "<cmd>BufferLineMovePrev<cr>", desc = "Move Prev Buffer" },
+    { "<leader>bl", "<cmd>BufferLineMoveNext<cr>", desc = "Move Next Buffer" },
+    { "<Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Prev Buffer" },
+    { "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Next Buffer" },
+  },
 }

@@ -4,7 +4,11 @@
 
 -- Disable shared clipboard with OS
 vim.opt.clipboard = ""
--- CTRL+c in visual mode copies to OS clipboard
-vim.api.nvim_set_keymap("v", "<C-c>", '"+y', { noremap = true, silent = true })
+
 -- Set relativ linenumber
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
+
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_ruff = "ruff_lsp"

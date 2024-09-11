@@ -5,9 +5,6 @@
 -- CTRL+c in visual mode copies to OS clipboard
 vim.api.nvim_set_keymap("v", "<C-c>", '"+y', { noremap = true, silent = true })
 
--- Custom Schema for Kubernetes
-vim.api.nvim_set_keymap("n", "<C-k>s", ':lua require("user.schema").init()<CR>', { noremap = true, silent = true })
-
 -- Set filetype for Ansible
 vim.api.nvim_set_keymap(
 	"n",
